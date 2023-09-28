@@ -2,9 +2,8 @@
 
 /**********************************************************
 * Project 4: Gerp
-* Benjamin Silver and Joel MacVicar
+* Benjamin Silver
 * April 28, 2023
-* CS 15 Data Structures
 * README
 **********************************************************
 
