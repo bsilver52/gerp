@@ -79,32 +79,30 @@ Hash Table: A hash tables provides the O(1) lookup and indexing of an array,
             table to insert). Hash tables can be implemented using vectors 
             givne their similarity to arrays. 
                         
-Hash Table Algos: As alluded to above, there are several essential algos
-                  needed to make a hash table work. They are: hashing the key,
-                  adjusting the hash to the table size, handling 
-                  collisions, and expanding when loadFactor is hit (0.7). 
+Hash Table Algos: 
+As alluded to above, there are several essential algos needed to make a hash
+table work. They are: hashing the key, adjusting the hash to the table size,
+handling collisions, and expanding when loadFactor is hit (0.7). 
                   
-Our Hash Table: We implemented our hash table as a vector of structs 
-                (our buckets). In each struct we included a bool filled
-                (needed for how we handled collisions), the string that 
-                is the key, a vector of files in which the key occurs,
-                a 2d vector of lines the word occurs on in each vector,
-                and a vector containing all permutations of the word.
+Our Hash Table: We implemented our hash table as a vector of structs (our
+buckets). In each struct we included a bool filled (needed for how we handled
+collisions), the string that is the key, a vector of files in which the key
+occurs, a 2d vector of lines the word occurs on in each vector, and a vector
+containing all permutations of the word.
                 
-                A few important things to note about our hashtable:
-                 - While our function only cares about the contents of the
-                   line, we chose not to store this info to save space. 
-                 - The file at index j of the file vector corresponds to the
-                   line numbers at index [j][:] of the 2d line num vector.
-                 - the allPerm vector is ONLY populated at the fully lowercase
-                   version of each word, and is empty in all other buckets. 
+A few important things to note about our hashtable:
+1. While our function only cares about the contents of the line, we chose not
+to store this info to save space. 
+2. The file at index j of the file vector corresponds to the line numbers at
+index [j][:] of the 2d line num vector.
+3. The allPerm vector is ONLY populated at the fully lowercase version of each
+word, and is empty in all other buckets. 
                   
-Our Hash Table Algos: We used the c++ hash fucntion to generate our distinct 
-                     hash #. Then, we moded by our table size to get an index
-                     in our hash table (aka vector of buckets). If an item is
-                     already in that slot, we handle the collision using linar
-                     probing. We made sure that if we hit the end of the table
-                     we looped back to index 0. When our table reached a load
-                     factor of 0.7, we stored the contents of the table in a 
-                     temp vector, doubled the hash table size, then rehashed 
-                     the info in the old table to populate the new one. 
+Our Hash Table Algos:
+We used the c++ hash fucntion to generate our distinct hash #. Then, we moded by
+our table size to get an index in our hash table (aka vector of buckets). If an
+item is already in that slot, we handle the collision using linear probing. We
+made sure that if we hit the end of the table we looped back to index 0. When
+our table reached a load factor of 0.7, we stored the contents of the table in a 
+temp vector, doubled the hash table size, then rehashed the info in the old table
+to populate the new one. 
