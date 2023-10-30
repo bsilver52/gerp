@@ -17,7 +17,7 @@ indexes a directory and searches for words within its files
 
 C. Files
 1. main.cpp: This is the driver file for the gerp program
-2. gerp.cpp: This file allows the client to locate instances of word for files
+2. gerp.cpp: This file allows clients to locate instances of word for files
 in a root directory
 3. gerp.h: This file searches and indexes files for the client using a hash
  table
